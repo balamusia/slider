@@ -28,6 +28,10 @@
     opacity: 1;
 }
   
+  #img{
+width: 100px
+  }
+  
 </style>
 <body>
   
@@ -35,18 +39,24 @@
 <p>Use the slider to increment or decrement value.</p>
   
 <div class="rangeslider">
-  <input type="range" min="1" max="100" value="10"
+  <input type="range" min="0" max="2" value="0"
                   class="myslider" id="sliderRange">
   <p>Value: <span id="demo"></span></p>
 </div>
   
+  <img id="img" src="#">
+  
 <script>
+
+const img = ["https://townsquare.media/site/40/files/2017/03/Dog-.jpg","https://gfp-2a3tnpzj.stackpathdns.com/wp-content/uploads/2018/08/two-saint-bernard-puppies-sitting-in-a-pile-of-fall-leaves-1600x1055.jpg","https://static.inspiremore.com/wp-content/uploads/2020/11/16113321/Grumpy-Dog-Challenge-24.jpg"];
+  
 var rangeslider = document.getElementById("sliderRange");
 var output = document.getElementById("demo");
 output.innerHTML = rangeslider.value;
   
 rangeslider.oninput = function() {
-  output.innerHTML = this.value;
+  // output.innerHTML = this.value;
+  document.getElementById("img").src=img[rangeslider.value];
 }
 </script>
   
